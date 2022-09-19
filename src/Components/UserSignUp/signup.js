@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const UserSignUp = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const auth = localStorage.getItem("user");
@@ -51,7 +51,7 @@ const SignUp = () => {
       password === reEnterPassword
     ) {
       // console.log("ll");
-      let result = await fetch("http://localhost:5000/register", {
+      let result = await fetch("http://localhost:5000/user/UserRegister", {
         method: "post",
         body: JSON.stringify(user),
         headers: {
@@ -60,7 +60,7 @@ const SignUp = () => {
         },
       });
       result = await result.json();
-      console.log(result, "result");
+      // console.log(result, "result");
       localStorage.setItem("user", JSON.stringify(result));
       navigate("/");
       // <Redirect to="/" />;
@@ -71,7 +71,7 @@ const SignUp = () => {
   return (
     <div className="register">
       {/* {console.log(user)} */}
-      <h1>Register</h1>
+      <h1>Register User</h1>
       <input
         className="inputBox"
         name="firstname"
@@ -142,4 +142,4 @@ const SignUp = () => {
     </div>
   );
 };
-export default SignUp;
+export default UserSignUp;

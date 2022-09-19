@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const UserLogin = () => {
   //   useEffect(() => {
   //     const auth = localStorage.getItem("user");
   //     if (auth) {
@@ -29,7 +29,7 @@ const Login = () => {
   const loginBtn = async () => {
     console.log(user);
     if (user.email && user.password) {
-      let result = await fetch("http://localhost:5000/login", {
+      let result = await fetch("http://localhost:5000/user/UserLogin", {
         method: "post",
         body: JSON.stringify(user),
         headers: {
@@ -72,4 +72,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+export default UserLogin;
