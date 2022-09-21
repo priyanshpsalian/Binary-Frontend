@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Nav from './Components/Navbar/navbar';
+import Header from './Components/Header/Header/header';
 import PrivateComponent from './Components/PrivateComponent/privatecomponent';
 import UserLogin from "./Components/UserLogin/login";
 import UserSignUp from "./Components/UserSignUp/signup";
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav />
+        <Header />
         <Routes>
           <Route element={<PrivateComponent />}>
             <Route path="/logout" element={<h1>logout</h1>}></Route>
