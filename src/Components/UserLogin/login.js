@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Nav from '../Header/Navbar/navbarRest';
+import HeaderTitle from '../Header/HeaderTitle/headertitleHome';
 
 const UserLogin = () => {
   //   useEffect(() => {
@@ -48,6 +50,11 @@ const UserLogin = () => {
     }
   };
   return (
+    
+    <>
+    <Nav/>
+    <HeaderTitle/>
+    
     <div className="register">
       <h1>Login</h1>
       <input
@@ -70,6 +77,7 @@ const UserLogin = () => {
         Login
       </button>
     </div>
+    </>
   );
 };
 export default UserLogin;

@@ -1,4 +1,7 @@
 import React from 'react'
+import '../style.css';
+import '../bootstrap.min.css';
+import './navbarRest.css';
 import { Link, useNavigate } from "react-router-dom";
 const Nav=()=>{
     const navigate =useNavigate();
@@ -79,22 +82,22 @@ const Nav=()=>{
             </div>
             <div className="main-nav__main-navigation">
               <ul className="one-page-scroll-menu main-nav__navigation-box">
-                <li className="current scrollToLink">
+                <li className="current scrollToLink p-4">
                   <a href="#banner">Home</a>
                 </li>
-                <li className="scrollToLink">
+                <li className="scrollToLink pt-4 pb-4">
                   <a href="#features">Features</a>
                 </li>
-                <li className="scrollToLink">
+                <li className="scrollToLink pt-4 pb-4">
                   <a href="#pricing">Pricing</a>
                 </li>
-                <li className="scrollToLink">
+                <li className="scrollToLink pt-4 pb-4">
                   <a href="#app-shots">App Screens</a>
                 </li>
-                <li className="scrollToLink">
+                <li className="scrollToLink pt-4 pb-4">
                   <a href="#testimonials">Testimonials</a>
                 </li>
-                <li className="dropdown scrollToLink">
+                <li className="dropdown scrollToLink pt-4 pb-4">
                   <a href="#blog">Login</a>
                   <ul>
                     <li>
@@ -105,7 +108,7 @@ const Nav=()=>{
                     </li>
                   </ul>
                 </li>
-                <li className="scrollToLink">
+                <li className="scrollToLink pt-4 pb-4">
                   <a href="#contact">Contact</a>
                 </li>
               </ul>
@@ -121,6 +124,8 @@ const Nav=()=>{
             </div>
           </div>
         </nav>
+
+
       </header>
     );
 }
