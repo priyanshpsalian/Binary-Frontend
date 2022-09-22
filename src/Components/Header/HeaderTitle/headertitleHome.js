@@ -52,7 +52,8 @@ const headertitle=()=>{
               className="banner-one__shape-moc-1"
             />
             <img
-              src="assets/images/mocs/banner-moc-1-1.png"
+              src="assets/images/mocs/VNU_M451_09.png"
+              width="692px"
               alt=""
               className="banner-one__moc"
             />

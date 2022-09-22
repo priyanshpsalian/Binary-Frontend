@@ -68,7 +68,6 @@ const Nav=()=>{
           <div className="container">
             <div className="main-nav__logo-box">
               <a href="index.html" className="main-nav__logo">
-                
                 <img
                   src="assets/images/logo-1-1.png"
                   width="105"
@@ -82,34 +81,45 @@ const Nav=()=>{
             <div className="main-nav__main-navigation">
               <ul className="one-page-scroll-menu main-nav__navigation-box">
                 <li className="current scrollToLink">
-                  <a href="#banner">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="scrollToLink">
-                  <a href="#features">Features</a>
+                  <Link href="#features">Features</Link>
                 </li>
                 <li className="scrollToLink">
-                  <a href="#pricing">Pricing</a>
+                  <Link href="#pricing">Pricing</Link>
                 </li>
                 <li className="scrollToLink">
-                  <a href="#app-shots">App Screens</a>
+                  <Link href="#app-shots">App Screens</Link>
                 </li>
                 <li className="scrollToLink">
-                  <a href="#testimonials">Testimonials</a>
+                  <Link href="#testimonials">Testimonials</Link>
                 </li>
                 <li className="dropdown scrollToLink">
-                  <a href="#blog">Login</a>
+                  <Link href="#blog">Login</Link>
                   <ul>
                     <li>
-                      <a href="login.html">Login Page</a>
+                      <Link href="login.html">Login Page</Link>
                     </li>
                     <li>
-                      <a href="register.html">Register</a>
+                      <Link href="register.html">Register</Link>
                     </li>
                   </ul>
                 </li>
-                <li className="scrollToLink">
-                  <a href="#contact">Contact</a>
+                <li className="dropdown scrollToLink">
+                  <Link href="#blog">Admin</Link>
+                  <ul>
+                    <li>
+                      <Link href="login.html">Login Page</Link>
+                    </li>
+                    <li>
+                      <Link href="register.html">Register</Link>
+                    </li>
+                  </ul>
                 </li>
+                {/* <li className="scrollToLink">
+                  <Link href="#contact">Contact</Link>
+                </li> */}
               </ul>
             </div>
             <div className="main-nav__right">
@@ -123,8 +133,6 @@ const Nav=()=>{
             </div>
           </div>
         </nav>
-
-
       </header>
     );
 }
