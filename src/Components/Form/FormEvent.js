@@ -59,27 +59,24 @@ const FormEvent = () => {
 		// 	country,
 		// } = user;
 
-		let result = await fetch(
-			"http://localhost:5000/community/CommunityRegister",
-			{
-				method: "post",
-				body: JSON.stringify(user),
-				headers: {
-					"Content-Type": "application/json",
-					Accept: "application/json",
-				},
-			}
-		);
+		let result = await fetch("http://localhost:5000/event/EventRegister", {
+			method: "post",
+			body: JSON.stringify(user),
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		});
 		let stat = await result.status;
 		// console.log(stat);
 		// console.log("here");
 		// console.log(typeof(stat));
-		console.log("helo tmkc");
+		// console.log("helo tmkc");
 
 		// result = await result.json();
 		// console.log(result, "result");
 		// localStorage.setItem("user", JSON.stringify(result));
-		console.log("tmkc");
+		// console.log("tmkc");
 		navigate("/");
 	};
 
@@ -101,11 +98,16 @@ const FormEvent = () => {
 							<div className="apply-wrapper mt-5">
 								<h3 className="text-white">Group - Form</h3>
 
-								<div className="apply_form bg_dark_9 p-5">
+								<form className="apply_form bg_dark_9 p-5">
 									<div className="row">
 										{formGroupFieldData.map(
 											(
-												{ label, idname, required },
+												{
+													label,
+													idname,
+													required,
+													type,
+												},
 												index
 											) => (
 												<div
@@ -120,7 +122,7 @@ const FormEvent = () => {
 															onChange={
 																handleChange
 															}
-															type="text "
+															type={type}
 															name={idname}
 															id={idname}
 															required={required}
@@ -144,7 +146,7 @@ const FormEvent = () => {
 											</button>
 										</div>
 									</div>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>

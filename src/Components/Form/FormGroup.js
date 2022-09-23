@@ -117,7 +117,7 @@ const FormGroup = () => {
 												</label>
 												<input
 													onChange={handleChange}
-													type="text "
+													type="text"
 													name="organiser"
 													id="organiser"
 													required
