@@ -23,6 +23,7 @@ const UserLogin = () => {
     email: "",
     password: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({
@@ -30,6 +31,7 @@ const UserLogin = () => {
       [name]: value,
     });
   };
+  
   const loginBtn = async () => {
     console.log(user);
     if (user.email && user.password) {

@@ -11,6 +11,7 @@ import Profile from "./Components/Adda/Profile";
 import Group from "./Components/Adda/Group";
 import About from "./Components/Adda/About";
 import PageNotFound from "./PageNotFound";
+import TechUpdates from "./Components/TechUpdates/TechUpdates";
 
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 					<Route path="/login" element={<UserLogin />} />
 					<Route path="/adminSignup" element={<AdminSignUp />} />
 					<Route path="/adminLogin" element={<AdminLogin />} />
+					<Route path="/techupdates" element={<TechUpdates />} />
 
 					<Route path="/adda-profile" element={<Profile />} />
 					<Route path="/adda-group" element={<Group />} />

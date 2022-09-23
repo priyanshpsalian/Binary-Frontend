@@ -25,7 +25,7 @@ const UserSignUp = () => {
     reEnterPassword: "",
     interests: "",
     occupation: "",
-    hobbey: "",
+    hobby: "",
     address: "",
     city:"",
     state:"",
@@ -54,7 +54,7 @@ const UserSignUp = () => {
       reEnterPassword,    
       interests,
       occupation,
-      hobbey,
+      hobby,
       address,
       city,
       state,
@@ -117,7 +117,7 @@ const UserSignUp = () => {
           <div className="suForm row">
             <div className="col-md-12 mx-auto">
               <div className="apply-wrapper mt-5">
-                <h3 className="text-center">Registration form</h3>
+                <h3 className="text-center text-white">Registration form</h3>
 
                 <div  className="apply_form bg_dark_9 p-5">
                   <div className="row">
@@ -192,9 +192,9 @@ const UserSignUp = () => {
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
-                        <label for="user_gender">Hobbey</label>
-                        <input type="text" value={user.hobbey} onChange={handleChange}  name="hobbey" id="committee" className="form-control"
-                          placeholder="Hobbey" />
+                        <label for="user_gender">hobby</label>
+                        <input type="text" value={user.hobby} onChange={handleChange}  name="hobby" id="committee" className="form-control"
+                          placeholder="hobby" />
                       </div>
                     </div>
                     <div className="col-md-6">
@@ -267,7 +267,7 @@ const UserSignUp = () => {
 
                   <div className="row">
                     <div className="col-md-12 mx-auto text-center">
-                      <button onClick={register} className="btn btn-primary btn-lg col-md-12 mt-3">Register</button>
+                      <button onClick={register} className="btn btn-primary btn-lg col-md-12 mt-3">Register</button>``
                     </div>
                   </div>
                 </div>

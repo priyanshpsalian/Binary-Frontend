@@ -1,0 +1,22 @@
+.cround{
+  border-radius: 20px;
+}
+
+.navbar-nav{
+  border-radius: 7px;
+}
+
+.ctext {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3; 
+  -webkit-box-orient: vertical;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
