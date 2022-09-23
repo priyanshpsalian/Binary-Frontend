@@ -12,6 +12,8 @@ import Group from "./Components/Adda/Group";
 import About from "./Components/Adda/About";
 import PageNotFound from "./PageNotFound";
 
+import FormGroup from "./Components/Form/FormGroup";
+
 function App() {
 	return (
 		<div className="App">
@@ -33,6 +35,8 @@ function App() {
 					<Route path="/adda-profile" element={<Profile />} />
 					<Route path="/adda-group" element={<Group />} />
 					<Route path="/adda-about" element={<About />} />
+
+					<Route path="/form-group" element={<FormGroup />} />
 
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
