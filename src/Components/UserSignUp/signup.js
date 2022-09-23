@@ -74,12 +74,13 @@ const UserSignUp = () => {
         },
       });
       let stat = await result.status;
-      console.log(typeof(stat));
-
+      // console.log(typeof(stat));
+      if(stat === 201){
       result = await result.json();
       console.log(result, "result");
       localStorage.setItem("user", JSON.stringify(result));
       navigate("/");
+    }
       // <Redirect to="/" />;
     
   };
