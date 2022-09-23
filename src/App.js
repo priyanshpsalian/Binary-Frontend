@@ -9,7 +9,7 @@ import AdminSignUp from "./Components/AdminSignUp/signup";
 import AdminLogin from "./Components/AdminSignUp/login";
 import Profile from "./Components/Adda/Profile";
 import Group from "./Components/Adda/Group";
-import About from "./Components/Adda/About";
+import Event from "./Components/Adda/Event";
 import PageNotFound from "./PageNotFound";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 
 					<Route path="/adda-profile" element={<Profile />} />
 					<Route path="/adda-group" element={<Group />} />
-					<Route path="/adda-about" element={<About />} />
+					<Route path="/adda-event" element={<Event />} />
 
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
