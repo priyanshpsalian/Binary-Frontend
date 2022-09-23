@@ -13,6 +13,7 @@ import About from "./Components/Adda/About";
 import PageNotFound from "./PageNotFound";
 
 import FormGroup from "./Components/Form/FormGroup";
+import FormEvent from "./Components/Form/FormEvent";
 
 function App() {
 	return (
@@ -37,6 +38,7 @@ function App() {
 					<Route path="/adda-about" element={<About />} />
 
 					<Route path="/form-group" element={<FormGroup />} />
+					<Route path="/form-event" element={<FormEvent />} />
 
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>

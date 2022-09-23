@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../Header/Navbar/navbarHome";
 import "../Header/style.css";
 import "../Header/bootstrap.min.css";
-import "./FormGroup.css";
+// import "./Form.css";
 
-const UserSignUp = () => {
+const FormGroup = () => {
 	const navigate = useNavigate();
 	useEffect(() => {
 		const auth = localStorage.getItem("user");
@@ -38,19 +38,19 @@ const UserSignUp = () => {
 	};
 
 	const register = async () => {
-		console.log(user, "int");
-		const {
-			organisationname,
-			organiser,
-			description,
-			tags,
-			image,
-			datetime,
-			location,
-			city,
-			state,
-			country,
-		} = user;
+		// console.log(user, "int");
+		// const {
+		// 	organisationname,
+		// 	organiser,
+		// 	description,
+		// 	tags,
+		// 	image,
+		// 	datetime,
+		// 	location,
+		// 	city,
+		// 	state,
+		// 	country,
+		// } = user;
 
 		let result = await fetch(
 			"http://localhost:5000/community/CommunityRegister",
@@ -64,13 +64,13 @@ const UserSignUp = () => {
 			}
 		);
 		let stat = await result.status;
-		console.log(stat);
-		console.log("here");
+		// console.log(stat);
+		// console.log("here");
 		// console.log(typeof(stat));
 
-		result = await result.json();
-		console.log(result, "result");
-		localStorage.setItem("user", JSON.stringify(result));
+		// result = await result.json();
+		// console.log(result, "result");
+		// localStorage.setItem("user", JSON.stringify(result));
 		navigate("/");
 	};
 
@@ -301,4 +301,4 @@ const UserSignUp = () => {
 		</>
 	);
 };
-export default UserSignUp;
+export default FormGroup;
