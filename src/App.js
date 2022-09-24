@@ -15,6 +15,9 @@ import TechUpdates from "./Components/TechUpdates/TechUpdates";
 import EventSearch from "./Components/eventSearch/EventSearch";
 import CommunitySearch from "./Components/eventSearch/EventSearch";
 
+import FormGroup from "./Components/Form/FormGroup";
+import FormEvent from "./Components/Form/FormEvent";
+
 function App() {
 	return (
 		<div className="App">
@@ -38,6 +41,9 @@ function App() {
 					<Route path="/adda-profile" element={<Profile />} />
 					<Route path="/adda-group" element={<Group />} />
 					<Route path="/adda-event" element={<Event />} />
+
+					<Route path="/form-group" element={<FormGroup />} />
+					<Route path="/form-event" element={<FormEvent />} />
 
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
