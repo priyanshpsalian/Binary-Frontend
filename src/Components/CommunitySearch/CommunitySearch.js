@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Nav from "../Header/Navbar/navbarHome";
 import "../Header/style.css";
 import "../Header/bootstrap.min.css";
@@ -19,6 +19,7 @@ import Button from 'react-bootstrap/Button';
 // let data = await res.json();
 
 const EventSearch = () => {
+    const navigate = useNavigate();
     const apikey = "4960f3e852cb41c2a30fa08ee94fe9bb";
 
     const [products, setProducts] = useState([]);
@@ -36,7 +37,7 @@ const EventSearch = () => {
         let numOfRes = 15;
         let result = await fetch(`http://localhost:5000/community/community`);
         result = await result.json();
-        // setProducts(result);
+        setProducts(result);
         console.log(result);
     };
 
@@ -93,28 +94,31 @@ const EventSearch = () => {
 
     }
 
-    const sendEvent = async(e) =>{
-        console.log(e.target.innerHTML);
+    const sendEvent = async(id) =>{
+        console.log(id);
+        // console.log(e.target.name);
+        localStorage.setItem("community", JSON.stringify(id));
+        navigate("/adda-group");
     }
 
     return (
         <div className="m-5">
 
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <nav className="navbar navbar-expand-md navbar-light bg-light">
 
-                <div class=" ml-5 mr-5 collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav bg-primary mr-5 ml-5 pt-1 pb-1 pr-3 pl-3">
+                <div className=" ml-5 mr-5 collapse navbar-collapse" id="navbarCollapse">
+                    <div className="navbar-nav bg-primary mr-5 ml-5 pt-1 pb-1 pr-3 pl-3">
                         <DropdownButton id="dropdown-basic-buttondropdown-variants-Primary" title={(param.mode)? param.mode : "Any Type"}>
                             <Dropdown.Item onClick={clicked}>Any Type</Dropdown.Item>
                             <Dropdown.Item onClick={clicked}>Online</Dropdown.Item>
                             <Dropdown.Item onClick={clicked}>Offline</Dropdown.Item>
                         </DropdownButton>
                     </div>
-                    <div class="navbar-nav bg-primary mr-5 pt-1 pb-1 pr-3 pl-3" >
+                    <div className="navbar-nav bg-primary mr-5 pt-1 pb-1 pr-3 pl-3" >
                         <DropdownButton id="dropdown-basic-buttondropdown-variants-Primary" title={(param.city)? param.city : "Any Location"}>
                             <Dropdown.Item onClick={clicked1}>Any Location</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1}>Mumbai</Dropdown.Item>
-                            <Dropdown.Item onClick={clicked1}>Aehemdabad</Dropdown.Item>
+                            <Dropdown.Item onClick={clicked1}>Ahmedabad</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1}>Pune</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1} >Bengaluru</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1} >Delhi</Dropdown.Item>
@@ -135,19 +139,19 @@ const EventSearch = () => {
 
                 </div>
             </nav>
-            <div class="card-deck mt-5">
-                <div class="product-grid">
+            <div className="card-deck mt-5">
+                <div className="product-grid">
                     {products.map((p, index) => (
                         <>
-                            <div class="card mt-4 cround" >
-                                <img class="card-img-top" src={p.imagepath} alt="Card image cap" />
-                                <div class="card-body pt-3 pr-1 pb-1 pl-1">
-                                    <h5 onClick={sendEvent} class="card-title font-weight-bold">{p.eventname}</h5>
-                                    <p class="card-text ctext">{p.descrition}</p>
+                            <div className="card mt-4 cround" >
+                                <img className="card-img-top" src={p.img} alt="Card image cap" />
+                                <div className="card-body pt-3 pr-1 pb-1 pl-1">
+                                    <h5 onClick={() => sendEvent(p._id)} name={p._id} className="card-title font-weight-bold">{p.name}</h5>
+                                    <p className="card-text ctext">{p.descrition}</p>
                                 </div>
                                 <div className="row mt-3 h6">
                                     <div className="col-md-6">
-                                        <span className="font-weight-bold"> Speaker: </span>{p.speaker}
+                                        <span className="font-weight-bold">Likes : </span>{p.likes}
                                     </div>
                                     <div className="col-md-6">
                                     <span className="font-weight-bold">City: </span>{p.city}
@@ -155,22 +159,22 @@ const EventSearch = () => {
                                 </div>
                                 <div className="row mt-2 h6">
                                     <div className="col-md-6">
-                                    <span className="font-weight-bold">Mode: </span>{p.mode}
+                                    <span className="font-weight-bold">Location: </span>{p.location}
                                     </div>
                                     <div className="col-md-6">
-                                    <span className="font-weight-bold">Price: </span>{p.price}
+                                    <span className="font-weight-bold">State: </span>{p.state}
                                     </div>
                                 </div>
                                 <div className="row mt-2 h6">
                                     <div className="col-md-6">
-                                    <span className="font-weight-bold">Total seats: </span>{p.totalseats}
+                                    <span className="font-weight-bold">Tags: </span>{p.tags}
                                     </div>
                                     <div className="col-md-6">
-                                    <span className="font-weight-bold">Seats remaining: </span>{p.emptyseats}
+                                    <span className="font-weight-bold">Country: </span>{p.country}
                                     </div>
                                 </div>
-                                <div class="card-footer mt-3">
-                                    <div class="text-muted h6 font-weight-bold">Date : {p.date}</div>
+                                <div className="card-footer mt-3">
+                                    <div className="text-muted h6 font-weight-bold">Date : {p.date}</div>
                                 </div>
                             
 

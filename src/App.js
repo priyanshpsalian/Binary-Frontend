@@ -13,7 +13,7 @@ import Event from "./Components/Adda/Event";
 import PageNotFound from "./PageNotFound";
 import TechUpdates from "./Components/TechUpdates/TechUpdates";
 import EventSearch from "./Components/eventSearch/EventSearch";
-import CommunitySearch from "./Components/eventSearch/EventSearch";
+import CommunitySearch from "./Components/CommunitySearch/CommunitySearch";
 
 function App() {
 	return (
