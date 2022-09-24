@@ -15,6 +15,10 @@ const Profile = () => {
   useEffect(() => {
     getProducts();
   }, []);
+  const [chats, setchats] = useState([]);
+  useEffect(() => {
+    getchats();
+  }, []);
 
   const getProducts = async () => {
     let idd = JSON.parse(localStorage.getItem("user"))._id;
@@ -22,28 +26,44 @@ const Profile = () => {
       method: "Get",
     });
     result = await result.json();
-    console.log(result._id, "kkkkk");
+    // setTimeout(()=>console.log('hold',10000))
+    // console.log(result._id, "kkkkk");
 	if (result) {
     setProducts(result);
   }
     
   };
-  const [community, setCommunity] = useState([]);
-  useEffect(() => {
-    getCommunity();
-  }, []);
+  // const [community, setCommunity] = useState([]);
+  // useEffect(() => {
+  //   getCommunity();
+  // }, []);
 
-  const getCommunity = async () => {
-    let user = JSON.parse(localStorage.getItem("user"));
-	let name = JSON.parse(localStorage.getItem("user")).community;
-    let result = await fetch(`http://localhost:5000/user/data`, {
-      method: "Post",
-	  body:user,
-    });
+  // const getCommunity = async () => {
+  //   let user = JSON.parse(localStorage.getItem("user"));
+	// let name = JSON.parse(localStorage.getItem("user")).community;
+  //   let result = await fetch(`http://localhost:5000/user/data`, {
+  //     method: "Post",
+	//   body:user,
+  //   });
+  //   result = await result.json();
+  //   console.log(result._id, "kkkkk");
+  //   if (result) {
+  //     setProducts(result);
+  //   }
+  // };
+  const getchats = async () => {
+    let idd = JSON.parse(localStorage.getItem("user"))._id;
+    let result = await fetch(
+      `http://localhost:5000/community/community/${idd}`,
+      {
+        method: "Get",
+      }
+    );
     result = await result.json();
-    console.log(result._id, "kkkkk");
+    console.log(result, "chats");
+    console.log(result.chats);
     if (result) {
-      setProducts(result);
+      setchats(result);
     }
   };
 //   getProducts();
@@ -73,10 +93,7 @@ const Profile = () => {
                 <div class="card widget-item">
                   <span>
                     <figure class="profile-thumb-middle">
-                      <img
-                        src={products.img}
-                        alt="profile picture"
-                      />
+                      <img src={products.img} alt="profile picture" />
                     </figure>
                     <h4 class="widget-title">{products.firstname}</h4>
                   </span>
@@ -514,6 +531,59 @@ const Profile = () => {
               {/* share box end */}
 
               {/* post status start */}
+              {/* {products.chats.map(({sent_by, description}, index) => (
+        <h1 key={index}>{sent_by},{description}</h1>
+      ))} */}
+              {setTimeout(() => console.log("hold", 10000))}
+              {chats.chats?.map((p, index) => (
+                <div class="card">
+                  {/* post title start */}
+                  <div class="post-title d-flex align-items-center">
+                    {/* profile picture end */}
+                    {/* <div class="profile-thumb">
+                    <a href="#">
+                      <figure class="profile-thumb-middle">
+                        <img
+                          src="/assets/images/adda/profile/profile-small-25.jpg"
+                          alt="profile picture"
+                        />
+                      </figure>
+                    </a>
+                  </div> */}
+                    {/* profile picture end */}
+
+                    <div class="posted-author">
+                      <h6 class="author">
+                        <a href="profile.html">{p.sent_by}</a>
+                      </h6>
+                      {/* <span class="post-time">35 min ago</span> */}
+                    </div>
+
+                    <div class="post-settings-bar">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div class="post-settings arrow-shape">
+                        <ul>
+                          <li>
+                            <button>copy link to profile</button>
+                          </li>
+                          <li>
+                            <button>edit post</button>
+                          </li>
+                          <li>
+                            <button>embed profile</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/* post title start */}
+                  <div class="post-content">
+                    <p class="post-desc">{p.description}</p>
+                  </div>
+                </div>
+              ))}
               <div class="card">
                 {/* post title start */}
                 <div class="post-title d-flex align-items-center">
@@ -1159,6 +1229,26 @@ const Profile = () => {
                   <h4 class="widget-title">Recent Notifications</h4>
                   <div class="widget-body">
                     <ul class="like-page-list-wrapper">
+                      {products.events?.map((p, index) => (
+                        <li class="unorder-list">
+                          {/* profile picture end */}
+                          <div class="profile-thumb">
+                            <a href="#">
+                              <figure class="profile-thumb-small">
+                                <img src={p.img} alt="profile picture" />
+                              </figure>
+                            </a>
+                          </div>
+                          {/* profile picture end */}
+
+                          <div class="unorder-list-info">
+                            <h3 class="list-title">
+                              <a href="#">{p.description}</a>
+                            </h3>
+                            <p class="list-subtitle">{p.mode}</p>
+                          </div>
+                        </li>
+                      ))}
                       <li class="unorder-list">
                         {/* profile picture end */}
                         <div class="profile-thumb">
