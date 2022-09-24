@@ -93,7 +93,7 @@ const UserLogin = () => {
                   />
                   <label>Password</label>
                 </div>
-                <a onClick={loginBtn} type="button" href="#">
+                <a onClick={loginBtn} type="button">
                   <span></span>
                   <span></span>
                   <span></span>

@@ -1,0 +1,93 @@
+.cround{
+    border-radius: 20px;
+  }
+  
+  .navbar-nav{
+    border-radius: 7px;
+  }
+  
+  .ctext {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+    -webkit-box-orient: vertical;
+  }
+  
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  
+  
+  /* body {
+    font-family: 'Montserrat';
+    font-style: Italic;
+    background-image: url("https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px;
+  } */
+  
+  .header {
+    text-align: center;
+    padding: 20px;
+    font-size:20px;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media (max-width: 800px) {
+    .column {
+      flex: 46%;
+      max-width: 46%;
+    }
+  }
+  
+  .card {
+    opacity: 0.8;
+    filter: alpha(opacity=60);
+  }
+  .card-title {
+    font-weight:bold;
+    text-align: center;
+  }
+  .card-text {
+    text-align: justify;
+  }
+  
+  .modal-header {
+    background-image: linear-gradient(#7FDBFF,white);
+  }
+  .modal-footer {
+    background-image: linear-gradient(white,#7FDBFF);
+  }
+  #left-panel-link {
+    position: relative;
+    left: 5%;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  #right-panel-link {
+    position: absolute;
+    right: 10%;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .sep {
+    height: 25px;
+  }
+  

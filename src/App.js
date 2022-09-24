@@ -12,6 +12,8 @@ import Group from "./Components/Adda/Group";
 import Event from "./Components/Adda/Event";
 import PageNotFound from "./PageNotFound";
 import TechUpdates from "./Components/TechUpdates/TechUpdates";
+import EventSearch from "./Components/eventSearch/EventSearch";
+import CommunitySearch from "./Components/eventSearch/EventSearch";
 
 function App() {
 	return (
@@ -28,10 +30,11 @@ function App() {
 					</Route>
 					<Route path="/signup" element={<UserSignUp />} />
 					<Route path="/login" element={<UserLogin />} />
+					<Route path="/communityIndex" element={<CommunitySearch />} />
 					<Route path="/adminSignup" element={<AdminSignUp />} />
 					<Route path="/adminLogin" element={<AdminLogin />} />
 					<Route path="/techupdates" element={<TechUpdates />} />
-
+					<Route path="/eventSearch" element={<EventSearch />} />
 					<Route path="/adda-profile" element={<Profile />} />
 					<Route path="/adda-group" element={<Group />} />
 					<Route path="/adda-event" element={<Event />} />

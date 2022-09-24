@@ -68,7 +68,7 @@ const TechUpdates = () => {
 
     const search = (e) => {
         console.log(e.target.value);
-        setParam({search: e.target.value});
+        setParam({ ...param ,search: e.target.value});
     }
 
     const query = async () => {

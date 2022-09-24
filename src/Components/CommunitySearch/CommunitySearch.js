@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../Header/Navbar/navbarHome";
 import "../Header/style.css";
 import "../Header/bootstrap.min.css";
-import "./EventSearch.css";
+import "./CommunitySearch.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
@@ -23,8 +23,8 @@ const EventSearch = () => {
 
     const [products, setProducts] = useState([]);
     const [param, setParam] = useState({
-        mode: "",
-        city: "",
+        mode: "Any Type",
+        city: "Any Location",
         search: ""
     });
 
@@ -34,29 +34,16 @@ const EventSearch = () => {
 
     const getProducts = async () => {
         let numOfRes = 15;
-        let result = await fetch(`http://localhost:5000/event/event`);
+        let result = await fetch(`http://localhost:5000/community/community`);
         result = await result.json();
-        setProducts(result);
+        // setProducts(result);
         console.log(result);
     };
 
 
     const clicked = async (e) => {
-        // console.log(e.target.innerHTML);
-        // console.log(e.target.value);
-
-        // setParam({ ...param, mode: e.target.innerHTML });
-        // // let temp = param.city;
-
-        // let result = await fetch(`https://newsapi.org/v2/everything?q=${e.target.innerHTML}&pageSize=24&apiKey=${apikey}`);
-        // result = await result.json();
-        // // setParam({...user, city : temp});
-        // if (result) {
-        //     setProducts(result);
-        //     console.log(result);
-        // }
         
-        let result = await fetch(`http://localhost:5000/event/event`);
+        let result = await fetch(`http://localhost:5000/community/community`);
         result = await result.json();
         setProducts(() => {
             const filtered = result.filter(function(elem){
@@ -189,8 +176,6 @@ const EventSearch = () => {
 
                             </div>
                         </>
-
-
                     ))}
                 </div>
 
