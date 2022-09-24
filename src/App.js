@@ -14,7 +14,7 @@ import Event from "./Components/Adda/Event";
 import PageNotFound from "./PageNotFound";
 import TechUpdates from "./Components/TechUpdates/TechUpdates";
 import EventSearch from "./Components/eventSearch/EventSearch";
-import CommunitySearch from "./Components/eventSearch/EventSearch";
+import CommunitySearch from "./Components/CommunitySearch/CommunitySearch";
 
 import FormGroup from "./Components/Form/FormGroup";
 import FormEvent from "./Components/Form/FormEvent";

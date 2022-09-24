@@ -91,6 +91,7 @@ const EventSearch = () => {
     const search = (e) => {
         // console.log(e.target.value);
         setParam({ search: e.target.value });
+
     }
 
     const query = async () => {
@@ -106,9 +107,15 @@ const EventSearch = () => {
 
     }
 
+
     const sendEvent = async(e) =>{
         console.log(e.target.innerHTML);
-    }
+        alert("Hello! I am an alert box!!");
+        let result = await fetch(`http://localhost:5000/join/JoinEvent/${e.target.innerHTML}`, {
+            method: "Post",
+          });
+          result = await result.json();
+    };
 
     return (
         <div className="m-5">
@@ -127,7 +134,7 @@ const EventSearch = () => {
                         <DropdownButton id="dropdown-basic-buttondropdown-variants-Primary" title={(param.city)? param.city : "Any Location"}>
                             <Dropdown.Item onClick={clicked1}>Any Location</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1}>Mumbai</Dropdown.Item>
-                            <Dropdown.Item onClick={clicked1}>Aehemdabad</Dropdown.Item>
+                            <Dropdown.Item onClick={clicked1}>Ahmedabad</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1}>Pune</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1} >Bengaluru</Dropdown.Item>
                             <Dropdown.Item onClick={clicked1} >Delhi</Dropdown.Item>
