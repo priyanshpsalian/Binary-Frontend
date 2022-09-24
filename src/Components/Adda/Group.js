@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../css/bootstrap.min.css";
 // import "./css/vendor/bicon.min.css";
 // import "./css/vendor/flaticon.css";
@@ -11,25 +12,28 @@ import "../../css/bootstrap.min.css";
 import "./css/style.css";
 
 const Profile = () => {
-	const [products, setProducts] = useState([]);
-	useEffect(() => {
-	  getProducts();
-	}, []);
-  
-	const getProducts = async () => {
-	  let idd = JSON.parse(localStorage.getItem("community"));
-	  let result = await fetch(`http://localhost:5000/community/community/${idd}`, {
-		method: "Get",
-	  });
-	  result = await result.json();
-	  console.log(result._id, "kkkkk");
-	  if (result) {
-	  setProducts(result);
-	}
-	  
-	};
-	return (
-		<main>
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = async () => {
+    let idd = JSON.parse(localStorage.getItem("user"))._id;
+    let result = await fetch(
+      `http://localhost:5000/community/community/${idd}`,
+      {
+        method: "Get",
+      }
+    );
+    result = await result.json();
+    console.log(result, "kkkkk");
+    console.log(result.chats);
+    if (result) {
+      setProducts(result);
+    }
+  };
+  return (
+    <main>
       {/* {products.chats.map(({sent_by, description}, index) => (
         <h1 key={index}>{sent_by},{description}</h1>
       ))} */}
@@ -246,10 +250,10 @@ const Profile = () => {
                         <div class="profile-thumb">
                           <a href="#">
                             <figure class="profile-thumb-small">
-                              {/* <img
+                              <img
                                 src="/assets/images/adda/profile/profile-35x35-1.jpg"
                                 alt="profile picture"
-                              /> */}
+                              />
                             </figure>
                           </a>
                         </div>
@@ -1465,7 +1469,7 @@ const Profile = () => {
         </div>
       </div>
     </main>
-	);
+  );
 };
 
 export default Profile;
