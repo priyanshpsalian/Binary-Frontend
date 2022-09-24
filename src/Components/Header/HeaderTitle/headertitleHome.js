@@ -61,18 +61,17 @@ const headertitle=()=>{
               <div className="col-lg-7">
                 <div className="banner-one__content">
                   <p className="banner-one__tag-line">
-                    Welcome to SEO Business{" "}
+                    Welcome to TechMeets{" "}
                     <a className="txtDecNone" href="#">
                       free trial
                     </a>
                   </p>
                   <h3>
-                    We help achieve <br /> biggest goals
+                    We help connect <br /> like minded techies.
                   </h3>
                   <p>
                     We are committed to providing our customers with exceptional
-                    service <br /> while offering our employees the best
-                    training.
+                    service <br /> while offering best class service.
                   </p>
                   <a
                     href="#contact"

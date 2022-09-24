@@ -27,7 +27,7 @@ const Profile = () => {
     });
     result = await result.json();
     // setTimeout(()=>console.log('hold',10000))
-    // console.log(result._id, "kkkkk");
+    console.log(result);
 	if (result) {
     setProducts(result);
   }
@@ -83,7 +83,7 @@ const Profile = () => {
   return (
     <main>
       <div class="main-wrapper">
-        <h1>Adda-Profile</h1>
+        <h1>Profile</h1>
 
         <div class="container pt-3">
           <div class="row">
@@ -1233,108 +1233,23 @@ const Profile = () => {
                         <li class="unorder-list">
                           {/* profile picture end */}
                           <div class="profile-thumb">
-                            <a href="#">
+                            {/* <a href="#">
                               <figure class="profile-thumb-small">
                                 <img src={p.img} alt="profile picture" />
                               </figure>
-                            </a>
+                            </a> */}
                           </div>
                           {/* profile picture end */}
 
                           <div class="unorder-list-info">
                             <h3 class="list-title">
-                              <a href="#">{p.description}</a>
+                              <a href="#">{p[0].name}</a>
                             </h3>
-                            <p class="list-subtitle">{p.mode}</p>
+                            <p class="list-subtitle">{p[0].date}</p>
                           </div>
                         </li>
                       ))}
-                      <li class="unorder-list">
-                        {/* profile picture end */}
-                        <div class="profile-thumb">
-                          <a href="#">
-                            <figure class="profile-thumb-small">
-                              <img
-                                src="/assets/images/adda/profile/profile-35x35-9.jpg"
-                                alt="profile picture"
-                              />
-                            </figure>
-                          </a>
-                        </div>
-                        {/* profile picture end */}
-
-                        <div class="unorder-list-info">
-                          <h3 class="list-title">
-                            <a href="#">Any one can join with us if you want</a>
-                          </h3>
-                          <p class="list-subtitle">5 min ago</p>
-                        </div>
-                      </li>
-                      <li class="unorder-list">
-                        {/* profile picture end */}
-                        <div class="profile-thumb">
-                          <a href="#">
-                            <figure class="profile-thumb-small">
-                              <img
-                                src="/assets/images/adda/profile/profile-35x35-8.jpg"
-                                alt="profile picture"
-                              />
-                            </figure>
-                          </a>
-                        </div>
-                        {/* profile picture end */}
-
-                        <div class="unorder-list-info">
-                          <h3 class="list-title">
-                            <a href="#">Any one can join with us if you want</a>
-                          </h3>
-                          <p class="list-subtitle">10 min ago</p>
-                        </div>
-                      </li>
-                      <li class="unorder-list">
-                        {/* profile picture end */}
-                        <div class="profile-thumb">
-                          <a href="#">
-                            <figure class="profile-thumb-small">
-                              <img
-                                src="/assets/images/adda/profile/profile-35x35-7.jpg"
-                                alt="profile picture"
-                              />
-                            </figure>
-                          </a>
-                        </div>
-                        {/* profile picture end */}
-
-                        <div class="unorder-list-info">
-                          <h3 class="list-title">
-                            <a href="#">Any one can join with us if you want</a>
-                          </h3>
-                          <p class="list-subtitle">18 min ago</p>
-                        </div>
-                      </li>
-                      <li class="unorder-list">
-                        {/* profile picture end */}
-                        <div class="profile-thumb">
-                          <a href="#">
-                            <figure class="profile-thumb-small">
-                              <img
-                                src="/assets/images/adda/profile/profile-35x35-6.jpg"
-                                alt="profile picture"
-                              />
-                            </figure>
-                          </a>
-                        </div>
-                        {/* profile picture end */}
-
-                        <div class="unorder-list-info">
-                          <h3 class="list-title">
-                            <a href="#">Any one can join with us if you want</a>
-                          </h3>
-                          <p class="list-subtitle">25 min ago</p>
-                        </div>
-                      </li>
-                      <li class="unorder-list">
-                        {/* profile picture end */}
+                      {/* <li class="unorder-list">
                         <div class="profile-thumb">
                           <a href="#">
                             <figure class="profile-thumb-small">
@@ -1345,7 +1260,6 @@ const Profile = () => {
                             </figure>
                           </a>
                         </div>
-                        {/* profile picture end */}
 
                         <div class="unorder-list-info">
                           <h3 class="list-title">
@@ -1353,7 +1267,7 @@ const Profile = () => {
                           </h3>
                           <p class="list-subtitle">39 min ago</p>
                         </div>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

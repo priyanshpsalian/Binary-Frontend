@@ -7,12 +7,12 @@ import "../Header/bootstrap.min.css";
 
 const FormGroup = () => {
 	const navigate = useNavigate();
-	useEffect(() => {
-		const auth = localStorage.getItem("user");
-		if (auth) {
-			navigate("/");
-		}
-	});
+	// useEffect(() => {
+	// 	const auth = localStorage.getItem("user");
+	// 	if (auth) {
+	// 		navigate("/");
+	// 	}
+	// });
 
 	const [user, setUser] = useState({
 		// username: "",
